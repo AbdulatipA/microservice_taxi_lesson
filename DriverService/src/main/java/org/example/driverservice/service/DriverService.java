@@ -34,9 +34,14 @@ public class DriverService {
 
         updateDriver.setFullName(driver.getFullName());
         updateDriver.setPassword(driver.getPassword());
-        updateDriver.setExperience(driver.getExperience());
-        updateDriver.setStars(driver.getStars());
+        updateDriver.setStatus(driver.getStatus());
 
+        return driverRepository.save(updateDriver);
+    }
+
+    public Driver updateStatus(long id, Boolean status) {
+        Driver updateDriver = driverRepository.findById(id).orElseThrow(() -> new RuntimeException("Client not found"));
+        updateDriver.setStatus(status);
 
         return driverRepository.save(updateDriver);
     }

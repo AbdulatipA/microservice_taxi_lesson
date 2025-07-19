@@ -15,10 +15,15 @@ public class OrderController {
     private final OrderService orderService;
 
 
+//    @PostMapping()
+//    public ResponseEntity<Order> create(@RequestBody Order order) {
+//        Order clientSaved = orderService.create(order);
+//        return ResponseEntity.ok(clientSaved);
+//    }
+
     @PostMapping()
-    public ResponseEntity<Order> create(@RequestBody Order order) {
-        Order clientSaved = orderService.create(order);
-        return ResponseEntity.ok(clientSaved);
+    public ResponseEntity<?> create(@RequestBody Order order) {
+        return orderService.create(order);
     }
 
     @GetMapping("/{id}")

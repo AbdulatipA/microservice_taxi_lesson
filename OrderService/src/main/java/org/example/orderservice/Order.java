@@ -18,6 +18,6 @@ public class Order {
     private double price;
     private String startPoint;
     private String endPoint;
-    private String driverName;
-    private String clientName;
+    private long driverId;
+    private long clientId;
 }

@@ -42,4 +42,9 @@ public class DriverController {
     public ResponseEntity<Driver> updateById(@PathVariable long id, @RequestBody Driver driver) {
         return ResponseEntity.ok(driverService.update(id, driver));
     }
+
+    @PutMapping("/statusDriver/{id}")
+    public ResponseEntity<Driver> updateStatus(@PathVariable long id, @RequestParam Boolean statusDriver) {
+        return ResponseEntity.ok(driverService.updateStatus(id, statusDriver));
+    }
 }

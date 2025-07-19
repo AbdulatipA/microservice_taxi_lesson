@@ -14,6 +14,5 @@ public class Driver {
 
     private String fullName;
     private String password;
-    private String experience;
-    private int stars;
+    private Boolean status;
 }
